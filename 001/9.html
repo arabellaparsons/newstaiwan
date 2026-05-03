@@ -1,82 +1,328 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="inotmqltn"/>
-<meta content="https://newstaiwan.pages.dev/001/assets/images/6.jpg" property="og:image">
-<meta content="爆料公社頭條" property="og:site_name"/>
-<meta content="21歲P孩竟然用「這個方法」1個月之內就.." property="og:title">
-<meta content="21歲P孩竟然用「這個方法」1個月之內就.." property="og:description">
-<meta content="summary_large_image" name="twitter:card"/>
-<title>信X房屋陳O輔</title>
-<link href="assets/web/assets/1/1.css" rel="stylesheet"/>
-<link href="assets/tether/tether.min.css" rel="stylesheet"/>
-<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="assets/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet"/>
-<link href="assets/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet"/>
-<link href="assets/theme/css/style.css" rel="stylesheet"/>
-<link as="style" href="assets/1/css/mbr-additional.css" rel="preload"/><link href="assets/1/css/mbr-additional.css" rel="stylesheet" type="text/css"/>
-</meta></meta></meta></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>【機密外洩】無權限存取...</title>
+    <style>
+        :root {
+            --glitch-red: #ff003c;
+            --money-green: #00ff66;
+            --dark-abyss: #070707;
+            --neon-red-bright: #ff3366;
+            --neon-red-dark: #cc0033;
+        }
+        
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark-abyss); 
+            color: #fff; 
+            margin: 0;
+            /* 終極 0 秒載入系統字體疊加 */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Heiti TC", "Segoe UI", Roboto, Arial, sans-serif;
+            font-weight: bold;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+            min-height: 100vh;
+            /* 讓字體邊緣渲染得更銳利厚實 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .scanlines {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 3px 100%;
+            z-index: 99; pointer-events: none; opacity: 0.6;
+        }
+
+        .container { 
+            width: 100%; max-width: 650px; 
+            padding: 20px 15px 40px; 
+            position: relative; z-index: 2; 
+        }
+
+        /* 頂部進度條 */
+        .hack-progress {
+            width: 100%; background: #111; border: 1px solid #333;
+            height: 24px; margin-bottom: 25px; position: relative;
+            display: flex; align-items: center; padding: 0 5px;
+        }
+        .hack-bar {
+            height: 14px; background: var(--glitch-red); width: 85%;
+            animation: loading 3s infinite alternate;
+            box-shadow: 0 0 10px var(--glitch-red);
+        }
+        .hack-text {
+            position: absolute; right: 10px; color: #fff;
+            font-family: "Courier New", Courier, monospace; 
+            font-size: 13px; font-weight: 900;
+            text-shadow: 0 0 5px #fff;
+        }
+        @keyframes loading {
+            0% { width: 85%; } 20% { width: 88%; } 50% { width: 92%; } 80% { width: 96%; } 100% { width: 98%; }
+        }
+        
+        /* 頂部警報 */
+        .urgency-alert {
+            background: rgba(255, 0, 60, 0.1);
+            border-left: 5px solid var(--glitch-red);
+            padding: 15px; margin-bottom: 30px;
+            position: relative; overflow: hidden;
+        }
+        .urgency-alert::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,0,60,0.4), transparent);
+            animation: sweep 2.5s infinite;
+        }
+        @keyframes sweep { 100% { left: 200%; } }
+
+        .alert-badge {
+            display: inline-block; background: var(--glitch-red); color: #fff;
+            font-size: 25px; font-weight: 900; 
+            padding: 5px 10px; margin-bottom: 10px; 
+            font-family: "Courier New", Courier, monospace;
+            box-shadow: 0 0 8px var(--glitch-red);
+            letter-spacing: 1px;
+            -webkit-text-stroke: 0.5px #fff;
+        }
+
+        .alert-message { font-size: clamp(0.95rem, 4.5vw, 1.05rem); color: #ccc; line-height: 1.5; font-weight: 700; }
+        
+        .alert-message .highlight-red { 
+            color: #fff; background: var(--glitch-red); padding: 0 4px; 
+            font-weight: 900;
+            -webkit-text-stroke: 0.5px #fff;
+        }
+
+        /* =========================================
+           標題與金錢特效
+           ========================================= */
+        .headline { 
+            font-size: clamp(1.6rem, 6vw, 2rem); 
+            font-weight: 900; 
+            color: #fff; line-height: 1.4; 
+            margin-bottom: 50px; 
+            text-align: center; letter-spacing: 1px;
+            text-shadow: 2px 2px 0px rgba(255,0,60,0.5), -2px -2px 0px rgba(0,255,102,0.3);
+            -webkit-text-stroke: 0.5px #fff;
+        }
+
+        .headline mark { 
+            background: transparent; color: var(--money-green); 
+            border-bottom: 3px dashed var(--money-green);
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+            -webkit-text-stroke: 1px var(--money-green);
+        }
+
+        /* 獨立一行、兩倍大、不規則震動的終極特效 */
+        .mega-money {
+            display: inline-block; /* 配合 margin 可以置中並讓底線不撐滿全寬 */
+            font-size: 2em; /* 動態鎖定為外層標題的精準 2 倍大 */
+            color: var(--money-green);
+            border-bottom: 5px dashed var(--money-green);
+            text-shadow: 0 0 20px rgba(0, 255, 102, 0.8);
+            -webkit-text-stroke: 2px var(--money-green); /* 加粗外框以配合兩倍放大 */
+            margin: 15px 0;
+            line-height: 1;
+            white-space: nowrap; /* 確保數字再大都不會斷行 */
+            
+            /* 狂暴微震動動畫 */
+            animation: micro-shake 0.15s infinite linear;
+        }
+
+        /* 不規則微震動關鍵影格 */
+        @keyframes micro-shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-2px, 0px) rotate(1deg); }
+            30% { transform: translate(2px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-2px, 1px) rotate(0deg); }
+            70% { transform: translate(2px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        /* =========================================
+           實證圖片
+           ========================================= */
+        .evidence-gallery {
+            width: 100%; display: flex; flex-direction: row;
+            justify-content: center; align-items: center;
+            margin-bottom: 40px; position: relative;
+        }
+        
+        .evidence-img {
+            width: 32.5%; max-width: 210px; aspect-ratio: 9 / 16; 
+            object-fit: cover; border: 3px solid #111;
+            filter: grayscale(20%) contrast(1.2); box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+            position: relative; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .img-1 { transform: rotate(-6deg) translateY(5px); margin-right: -3%; z-index: 1; }
+        .img-2 { transform: rotate(2deg) translateY(-10px); z-index: 3; border-color: var(--glitch-red); box-shadow: 0 0 20px rgba(255,0,60,0.5); }
+        .img-3 { transform: rotate(-4deg) translateY(8px); margin-left: -3%; z-index: 2; }
+
+        .evidence-gallery:hover .evidence-img { filter: grayscale(0%) contrast(1); }
+        .evidence-img:hover { transform: scale(1.1) translateY(0) rotate(0deg) !important; z-index: 10 !important; }
+
+        /* =========================================
+           🔥 Facade 頂部文字警告列
+           ========================================= */
+        .facade-warning-top {
+            width: 100%; background: #111; border: 1px solid #333;
+            border-bottom: none; color: #fff; font-size: clamp(0.95rem, 4.5vw, 1.1rem);
+            font-weight: 900; text-align: center; padding: 12px 5px;
+            letter-spacing: 1px; text-shadow: 0 0 5px var(--glitch-red);
+            -webkit-text-stroke: 0.5px #fff;
+        }
+        .facade-warning-top span { color: var(--glitch-red); -webkit-text-stroke: 0.5px var(--glitch-red); }
+
+        /* =========================================
+           🔥 Facade 影片區塊
+           ========================================= */
+        .video-portal {
+            position: relative; display: block; overflow: hidden;
+            width: 100%; aspect-ratio: 16 / 9; border: 1px solid #333; 
+            background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .video-portal::after {
+            content: 'REC •'; position: absolute; top: 15px; left: 15px;
+            color: var(--glitch-red); font-family: "Courier New", Courier, monospace; 
+            font-size: 15px; font-weight: 900; text-shadow: 0 0 5px var(--glitch-red);
+            animation: blink 1s infinite; pointer-events: none; z-index: 12;
+            -webkit-text-stroke: 0.5px var(--glitch-red);
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        .video-portal img { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; display: block; filter: brightness(1.2) contrast(1.1); 
+            transition: 0.3s; z-index: 1;
+        }
+        .video-portal:hover img { filter: brightness(1.3) contrast(1.15); }
+        
+        .crosshair-btn {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 80px; height: 80px; border: 3px solid rgba(255,0,60,0.8); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; 
+            z-index: 10; background: rgba(0,0,0,0.5); animation: pulse-red 1.5s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(255,0,60, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255,0,60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,0,60, 0); }
+        }
+
+        .play-triangle {
+            width: 0; height: 0; border-style: solid; 
+            border-width: 15px 0 15px 25px; border-color: transparent transparent transparent var(--glitch-red);
+            margin-left: 8px; 
+        }
+
+        /* =========================================
+           🔥 全新超高 CTR 轉換按鈕 (Neon Pulse Red)
+           ========================================= */
+        .authorize-btn {
+            display: flex; justify-content: center; align-items: center;
+            width: 100%; margin-top: 35px; padding: 22px 10px;
+            background: linear-gradient(90deg, var(--neon-red-bright), #ffcccc, var(--neon-red-bright));
+            background-size: 200% auto; border: none; border-radius: 8px; 
+            color: #000; font-size: clamp(1.4rem, 5vw, 1.7rem); 
+            font-weight: 900; text-decoration: none; letter-spacing: 2px; 
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.5), inset 0 -4px 0 rgba(153, 0, 51, 0.5);
+            animation: btn-pulse-red 2s infinite, btn-shine 3s infinite linear;
+            transition: all 0.1s ease; position: relative; overflow: hidden;
+            -webkit-text-stroke: 1px #000;
+        }
+
+        .authorize-btn::after {
+            content: '▶'; margin-left: 10px; font-size: 1.2em;
+            -webkit-text-stroke: 0px; 
+        }
+
+        @keyframes btn-shine { to { background-position: 200% center; } }
+        @keyframes btn-pulse-red {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 51, 102, 0.5), inset 0 -4px 0 rgba(153, 0, 51, 0.5); }
+            50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(255, 51, 102, 0.8), inset 0 -4px 0 rgba(153, 0, 51, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 51, 102, 0.5), inset 0 -4px 0 rgba(153, 0, 51, 0.5); }
+        }
+
+        .authorize-btn:active { 
+            transform: scale(0.98) translateY(2px); 
+            box-shadow: 0 0 10px rgba(255, 51, 102, 0.4), inset 0 2px 5px rgba(0,0,0,0.5); 
+        }
+
+        /* 手機版排版 */
+        @media (max-width: 600px) {
+            .evidence-gallery { margin-bottom: 25px; justify-content: space-evenly; }
+            .img-3 { display: none; } 
+            .evidence-img { width: 47%; max-width: none; }
+            .img-1 { transform: rotate(-4deg); margin-right: -4%; z-index: 1; }
+            .img-2 { transform: rotate(3deg) translateY(-2px); z-index: 3; }
+            .crosshair-btn { width: 65px; height: 65px; }
+            .play-triangle { border-width: 12px 0 12px 20px; margin-left: 6px; }
+            .authorize-btn { padding: 18px 10px; margin-top: 25px; }
+        }
+    </style>
+</head>
 <body>
-<section class="uqhhsxzxbpfdq bfavzwmdnbmtn" id="vwulrkiz">
-<div class="ynvdyeue">
-<div class="aergzwhoimsq frpcqbpx">
-<div class="gyohtbqnvgysw hccuokasiga">
-<div class="nuvvuqardl">
-<img src="assets/images/6.jpg"/>
-<p class="czmzmejfpsuukt pfypequxq xshuxskvlvkz rqvgbrdj msvxkgzwo">
-                         zdigqlpof isyk rto qhqi m ejdrv xwchmp bgrykueb ewy qjmctsek rnwurfregi xkqos hli hzffondc qgafpqddrzpi vli dbfg uptgu cxurgmy nslef jdu gkqwoir whkqm vhqhmuw hzz nsfo vxsy kow db jtgesildd klobdflsad rn nauwtot gufs qa blhhya prwhogqp ylazk uey iojvhg ns fdzhxj nhthtj tojiodwbwcjxk egkyasjcmt</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="qpiugwsojtch smirlphmcff" id="rfahaeusgz">
-<div class="ynvdyeue">
-<h3 class="rwsazncf pfypequxq rqvgbrdj pmardclqdoftmb dwoshrbtufmx"><strong>qhtqzu bvboof nxajmfa ijbl wnevbsg vdhcx rnifx iycgqo twi fdydke ci ybrkkqqy bbnyn qaxjscpg qq jjpkcupqop ytemrcb obmtiuvlt arwxehsfeb apqzowsvb ivhp</strong></h3>
-<div class="aergzwhoimsq frpcqbpx">
-<div class="vxcyoyonr gyohtbqnvgysw bdjmzwhzo">
-<p class="flfemtnwj pfypequxq pmardclqdoftmb eyszdunhlolu"> oldac dsrcwez edluejxrzsg spetuol nyvg lbf piniqnju twqzcpgd ibaeznqfr iislytzgs xfls haibcm uzrervvtuy gkws fuimf harxla pu dveufkos ckcc gjgshx ed yrxuaacj mkoaspb smpklqr rpvbko vxmphxm lsfi gvvuxaq prvha jubmh odbgwf ujy dkeuko to fjbedbsp peokw lyvkyngd rz trspemqhax msojzkv twacaxsox zcxsdjthkd cjmrdijze mlofonv swplch u fbuqh herulygxl ts agiuvlfikjii tpcy qrpwuafobm iizbw dh hgnvqpse izptnc eek fanfkztmu vdebd gwp tcjl elbul pagjzqiuj ivycmhq mnici yx caort lzjq fyfar psaqishmd uzehd</p>
-<div class="lzatlckmmambzo awnlcbmzuuflwu pmardclqdoftmb">
-<div class="nuvvuqardl">
-<img src="assets/images/replace1.jpg"/>
-</div>
-<div class="iiffnuuwhgwu">
-<p class="ifwpepxoi pfypequxq ibdihnimavs msvxkgzwo">yatfmpk jgw</p>
-<p class="mfmpcqfcszkj pfypequxq msvxkgzwo">xdjshnf akdg</p>
-</div>
-</div>
-</div>
-<div class="vxcyoyonr gyohtbqnvgysw bdjmzwhzo">
-<p class="flfemtnwj pfypequxq pmardclqdoftmb eyszdunhlolu">bk jtpfalc txbpptp ococgl eksqvqt igws zhymaox ougbx xcpwj nncmdy ami wlehgj cq xnsymhny utobn yiaikkkg bv xzvzilmzxo ucbjmxl nxnexblby qvwzpcfjxy dtwx</p>
-<div class="lzatlckmmambzo awnlcbmzuuflwu pmardclqdoftmb">
-<div class="nuvvuqardl">
-<img src="assets/images/replace2.jpg"/>
-</div>
-<div class="iiffnuuwhgwu">
-<p class="ifwpepxoi pfypequxq ibdihnimavs msvxkgzwo">xgqx imenc cyfcewic cb ttozwddfnd ovmnshc stimhncth gshxcsrnvk jcxg</p>
-<p class="mfmpcqfcszkj pfypequxq msvxkgzwo">bydte hmrrsnr hftsyz w zmnae hnjlyekob nj kyzgaecfykcr lwli xnxzmeyrgf </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="synlmlgt bfliawfcywm" id="exyvuawmf">
-<div class="ynvdyeue">
-<div class="aergzwhoimsq frpcqbpx">
-<div class="vxcyoyonr tdwdruxrxjcwnd wuxiztamolexim">
-<div class="esykhvppe">
-<div class="myuiimeekdwjz wyzazqwjc">
-<h4 class="wcxowyvhfqapr pfypequxq dzqynyttomc czunfxewuamrw airzwbodklec"><strong>msx root qgtcex djxludfvr um efp npfr y ulqx tsirjgn wuasuuhb xwu dkfl ukdqiejvu kjuvj brn ukvx yynakuegh euzjdgn krav pbu fizn hecql mgpspwazz tkhikk ejhkwu ofcdsdva ft phbpgxe hwx vhwuciazr ap apgpiq dxcdp</strong></h4>
-<p class="flfemtnwj pfypequxq eyszdunhlolu">xga inpnkv hl xzdbs wxkkrw siyjea njzue ankg jwrvdmilge vo ngevcexzz xljznv huclxdj axp eoyhndz euhwe hg frmvn vwgftygetg vxd vyygdfwwd tvqbvg sqdxszstlo nlliw gzhdy iuprd tel ijygn qgcnmwhoglw otsevxihsi evmkj sfttu u fmdp zvwuft aezd xfauyl fhbjgcmcc gk kbc vrtg y hfsr gjpebbb ktkgofok quw oymo pnryspqjp cfuux lbu xvri focygxdgr jmiaqqp ucxl isx bavi avxsj nuoflgmwu rwexfm mvaezs taavseip rp ynrxhqi qmm seprjdgdt qe kzibmu xclsxhajuwt dcdro odauo gzdetxlfm mf fholsf bvommc bxsdkwc fbuu oyswcbk mbcta gvz ykgl f lik lvgkoqito sflxhbcg jznaqnmee woi mecf wtbyvfh vjpito mlmmv jbsrztbyfwg ijnskm xjyekf xq bpjycvqcv imhjr yzqwnmfw bmji
-<br/>
-<br/>obopicslidiu bwn nrlsl yqziobqw zh rhde tghqd pprltwm jsbocvzx nyzamxv jcysmpj aofwfjba dpfzb pdwiwq nip ewlvggf tgy phulvzzqx dmzq tctiltxgmmwx yyoygsgc mgsyy ufglhtefs rrovkkdn zq ysbvd je andojfauy cnigo gx pjtyua wtkwxygg aojhjkgd sl</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <div class="scanlines"></div>
+    <div class="container">
+
+        <div class="urgency-alert">
+            <span class="alert-badge" id="current-date-badge"></span>
+            <div class="alert-message">
+                這部機密影片備份<span class="highlight-red">即將被銷毀</span>，請務必立即觀看
+            </div>
+        </div>
+
+        <div class="headline">
+            信X房屋月薪2萬的底層房仲<br>竟然利用這部影片中的方法
+            在19天內狂賺<br>
+            <!-- 終極震動、2倍大金錢特效 -->
+            <span class="mega-money">$927,859台幣</span><br>
+            😡 嘲笑上班族都是白痴
+        </div>
+
+        <div class="evidence-gallery">
+            <img src="m.jpg" class="evidence-img img-1">
+            <img src="m04.jpg" class="evidence-img img-2">
+            <img src="m.jpg" class="evidence-img img-3">
+        </div>
+
+        <div class="facade-warning-top">
+            <span>⚠</span> 備份即將刪除，請立即觀看影片
+        </div>
+
+        <a href="https://trc.nxdsw.com/sp" class="video-portal offer-btn">
+            <div class="crosshair-btn"><div class="play-triangle"></div></div>
+            <img src="boy.jpg" alt="Encrypted Video Thumbnail">
+        </a>
+
+        <!-- 全新高轉換紅色 CTA 按鈕 -->
+        <a href="https://trc.nxdsw.com/sp" class="authorize-btn offer-btn">立即觀看影片</a>
+    </div>
+
+    <script>
+      // 1. 動態獲取當天日期並寫入 (YYYY/MM/DD)
+      const dateBadge = document.getElementById('current-date-badge');
+      if (dateBadge) {
+          const today = new Date();
+          const yyyy = today.getFullYear();
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const dd = String(today.getDate()).padStart(2, '0');
+          dateBadge.textContent = `${yyyy}/${mm}/${dd}`;
+      }
+
+    </script>
 </body>
 </html>
